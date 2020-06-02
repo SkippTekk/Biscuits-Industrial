@@ -13,7 +13,7 @@ Modules used so far
 [Express](https://www.npmjs.com/package/express)
 ``npm i express --save``
 
-[PUG](https://www.npmjs.com/package/pug)
+[pugjs](https://www.npmjs.com/package/pug)
 ``npm i pug --save``
 ------------------------------------------------------
 Future addons

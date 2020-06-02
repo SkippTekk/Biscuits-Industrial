@@ -8,11 +8,13 @@ Modules used so far
 
 
 [Nodemon](https://www.npmjs.com/package/nodemon)
-``npm install -g nodemon``
+``npm i nodemon --save``
 
 [Express](https://www.npmjs.com/package/express)
-``npm install express``
+``npm i express --save``
 
+[PUG](https://www.npmjs.com/package/pug)
+``npm i pug --save``
 ------------------------------------------------------
 Future addons
 

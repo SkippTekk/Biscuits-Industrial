@@ -15,6 +15,7 @@ Modules used so far
 
 [pugjs](https://www.npmjs.com/package/pug)
 ``npm i pug --save``
+
 ------------------------------------------------------
 Future addons
 

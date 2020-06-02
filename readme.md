@@ -1,6 +1,8 @@
 # Biscuits Industrial
 Website project for Eve Online.
 
+Temp website will be located at [My website](https://skipptekk.com) Once i feel it's ready to be "open" to the public.
+
 Starting the project on your local machine.
 ``npm server.jar``
 

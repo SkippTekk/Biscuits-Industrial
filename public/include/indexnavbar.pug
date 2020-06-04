@@ -1,61 +1,68 @@
 script(type="text/javascript").
-
-function updateClock ( )
-
- var currentTime = new Date ( )
- var currentHours = currentTime.getUTCHours ( )
- var currentMinutes = currentTime.getUTCMinutes ( )
- var currentSeconds = currentTime.getUTCSeconds ( )
- currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes
- currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds
- var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM"
- currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours
- currentHours = ( currentHours == 0 ) ? 12 : currentHours
- var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay
- document.getElementById("clock").firstChild.nodeValue = currentTimeString
-
-<nav class="navbar navbar-inverse navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Home Page</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="./ships">Ship Manufacturing <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></li>
-			<li class="disabled"><a href="#">Citadel Manufacturing <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
-			<li class="disabled"><a href="#">Reprocessing <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
-			<li class="disabled"><a href="#">Ship Fitting <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
-			<li class="disabled"><a href="#">Jump Gate Refuel <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-				<p class="navbar-text"><body onload="updateClock(); setInterval('updateClock()', 1000 )"><a id="clock" style="color:white">&nbsp;</a></p>
-
-					<?php
-					$loggedIn=intval((isset($_SESSION['user_id'])
-					&&
-					!empty($_SESSION['user_id'])));
-					if($loggedIn===0)
-					{
-					 echo('
-					<li class="disabled"><a href="#">Login</a></li>
-	 				<li class="disabled"><a href="#">Register</a></li>');
-					}
-					else {
-					 echo('
-					 <li class="disabled"><a href="#">Logout</a></li>
-					 <li class="disabled"><a href="#">My Account</a></li>');
-					}
-					?>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+  function updateClock ( )
+  {
+  var currentTime = new Date ( );
+  var currentHours = currentTime.getUTCHours ( );
+  var currentMinutes = currentTime.getUTCMinutes ( );
+  var currentSeconds = currentTime.getUTCSeconds ( );
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+  }
+nav.navbar.navbar-inverse.navbar-default
+  .container-fluid
+    // Brand and toggle get grouped for better mobile display
+    .navbar-header
+      button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="#") Home Page
+    // Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href="./ships.pug")
+            | Ship Manufacturing 
+            span.glyphicon.glyphicon-refresh(aria-hidden="true")
+        li.disabled
+          a(href="#")
+            | Citadel Manufacturing 
+            span.glyphicon.glyphicon-remove(aria-hidden="true")
+        li.disabled
+          a(href="#")
+            | Reprocessing 
+            span.glyphicon.glyphicon-remove(aria-hidden="true")
+        li.disabled
+          a(href="#")
+            | Ship Fitting 
+            span.glyphicon.glyphicon-remove(aria-hidden="true")
+        li.disabled
+          a(href="#")
+            | Jump Gate Refuel 
+            span.glyphicon.glyphicon-remove(aria-hidden="true")
+      ul.nav.navbar-nav.navbar-right
+        p.navbar-text
+          body(onload="updateClock(); setInterval('updateClock()', 1000 )")
+            a#clock(style="color:white") &nbsp;
+        a(href="#") Login
+        li.disabled
+          a(href="#") Register
+        | &apos;);
+        | &#x9;&#x9;&#x9;&#x9;&#x9;}
+        | &#x9;&#x9;&#x9;&#x9;&#x9;else {
+        | &#x9;&#x9;&#x9;&#x9;&#x9; echo(&apos;
+        li.disabled
+          a(href="#") Logout
+        li.disabled
+          a(href="#") My Account
+        | &apos;);
+        | &#x9;&#x9;&#x9;&#x9;&#x9;}
+        | &#x9;&#x9;&#x9;&#x9;&#x9;?&gt;
+.navbar-collapse
+.container-fluid

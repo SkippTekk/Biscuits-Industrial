@@ -1,0 +1,35 @@
+html
+  body
+    header.container
+    section.container-fluid
+      .row
+        .col-md-3.leftNav
+          script(type="text/javascript" src="//cdn.jsdelivr.net/gh/restingcoder/discord-widget@1.1/discord-widget.min.js")
+          script(type="text/javascript").
+            discordWidget.init({
+            serverId: '656049566046748694',
+            title: 'Biscuits Industry',
+            join: true,
+            joinText: 'Join Server',
+            alphabetical: false,
+            theme: 'dark',
+            hideChannels: ['Channel Name 1', 'Channel Name 2'],
+            showAllUsers: true,
+            allUsersDefaultState: true,
+            showNick: false,
+            userName: '',
+            useCDN: true
+            });
+            discordWidget.render();
+          .discord-widget
+        .col-md-6.content
+          p
+            | Hi there, thanks for checking out the website, To begin you will need to select a ship from the top navagation,
+          |       Here is an example
+          b video will come later time.
+        .col-md-3.reletedContent
+          .class-media
+            .media-left
+              h4.media-heading I Like Biscuits.
+              a(href="https://evewho.com/pilot/I+like+biscuits" target="_blank")
+                img.media-object(src="https://images.evetech.net/characters/95046472/portrait" style="max-width: 100%; max-height: 100%;" alt="Ship Image goes Here, Mail SkippTekk or tweet @XGKIPPY for a fix")

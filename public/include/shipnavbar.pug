@@ -1,0 +1,2253 @@
+script(type="text/javascript").
+  function updateClock ( )
+  {
+  var currentTime = new Date ( );
+  var currentHours = currentTime.getUTCHours ( );
+  var currentMinutes = currentTime.getUTCMinutes ( );
+  var currentSeconds = currentTime.getUTCSeconds ( );
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+  var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+  }
+nav.navbar.navbar-inverse.navbar-expand-lg.navbar-slide-nav
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle.pull-right(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="./") Ship Manufacturing
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Amarr
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Frigate/Crucifier") Crucifier
+                        li
+                          a(href="#" a-ship-name="Amarr/Frigate/Magnate") Magnate
+                        li
+                          a(href="#" a-ship-name="Amarr/Frigate/Executioner") Executioner
+                        li
+                          a(href="#" a-ship-name="Amarr/Frigate/Inquisitor") Inquisitor
+                        li
+                          a(href="#" a-ship-name="Amarr/Frigate/Tormentor") Tormentor
+                        li
+                          a(href="#" a-ship-name="Amarr/Frigate/Punisher") Punisher
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Navy Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Frigate/Crucifier Navy Issue") Crucifier Navy Issue
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Frigate/Imperial Navy Slicer") Imperial Navy Slicer
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Interceptor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Interceptor/Crusader") Crusader
+                        li
+                          a(href="#" a-ship-name="Amarr/Interceptor/Malediction") Malediction
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Assault Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Assault Frigate/Retribution") Retribution
+                        li
+                          a(href="#" a-ship-name="Amarr/Assault Frigate/Vengeance") Vengeance
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Covert Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Covert Ops/Anathema") Anathema
+                        li
+                          a(href="#" a-ship-name="Amarr/Covert Ops/Purifier") Purifier
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Electronic Attack Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Electronic Attack Ship/Sentinel") Sentinel
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Logistic Frigates
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Logistic Frigates/Deacon") Deacon
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Destroyer Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Destroyer/Coercer") Coercer
+                        li
+                          a(href="#" a-ship-name="Amarr/Destroyer/Dragoon") Dragoon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Interdictor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Interdictor/Heretic") Heretic
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Destroyers
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Command Destroyers/Pontifex") Pontifex
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Tactical Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Tactical Destroyer/Confessor") Confessor
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Cruiser/Maller") Maller
+                        li
+                          a(href="#" a-ship-name="Amarr/Cruiser/Omen") Omen
+                        li
+                          a(href="#" a-ship-name="Amarr/Cruiser/Augoror") Augoror
+                        li
+                          a(href="#" a-ship-name="Amarr/Cruiser/Arbitrator") Arbitrator
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Cruiser/Scythe Fleet Issue") Scythe Fleet Issue
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Cruiser/Stabber Fleet Issue") Stabber Fleet Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Recon Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Recon Ship/Curse") Curse
+                        li
+                          a(href="#" a-ship-name="Amarr/Recon Ship/Pilgrim") Pilgrim
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Assault Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Heavy Assault Cruiser/Zealot") Zealot
+                        li
+                          a(href="#" a-ship-name="Amarr/Heavy Assault Cruiser/Sacrilege") Sacrilege
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistics Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Logistics Cruiser/Guardian") Guardian
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Strategic Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Strategic Cruiser/Legion") Legion
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battlecruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battlecruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Battlecruiser/Prohecy") Prohecy
+                        li
+                          a(href="#" a-ship-name="Amarr/Battlecruiser/Harbinger") Harbinger
+                        li
+                          a(href="#" a-ship-name="Amarr/Battlecruiser/Oracle") Oracle
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Battleship/Harbringer Navy Issue") Harbringer Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Ships
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Command Ships/Absolution") Absolution
+                        li
+                          a(href="#" a-ship-name="Amarr/Command Ships/Damnation") Damnation
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Battleship/Apocalypse") Apocalypse
+                        li
+                          a(href="#" a-ship-name="Amarr/Battleship/Armageddon") Armageddon
+                        li
+                          a(href="#" a-ship-name="Amarr/Battleship/Abaddon") Abaddon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Battleship/Armageddon Navy Issue") Armageddon Navy Issue
+                        li
+                          a(href="#" a-ship-name="Amarr/Navy Battleship/Apocalypse Navy Issue") Apocalypse Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Black Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Black Ops/Redeemer") Redeemer
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Marauder
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Marauder/Paladin") Paladin
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Dreadnought/Revelation") Revelation
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Carrier/Apostle") Apostle
+                        li
+                          a(href="#" a-ship-name="Amarr/Carrier/Aeon") Aeon
+                        li
+                          a(href="#" a-ship-name="Amarr/Carrier/Archon") Archon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Titan/Avatar") Avatar
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Industrial Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Industrial
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Industrial/Sigil") Sigil
+                        li
+                          a(href="#" a-ship-name="Amarr/Industrial/Bestower") Bestower
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Transport Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Transport Ship/Prorator") Prorator
+                        li
+                          a(href="#" a-ship-name="Amarr/Transport Ship/Impel") Impel
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Freighter/Providence") Providence
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Jump Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Amarr/Jump Freighter/Ark") Ark
+                    // 
+                // 
+            // Copy here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Caldari State
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Frigate/Bantam") Bantam
+                        li
+                          a(href="#" a-ship-name="Caldari State/Frigate/Condor") Condor
+                        li
+                          a(href="#" a-ship-name="Caldari State/Frigate/Griffin") Griffin
+                        li
+                          a(href="#" a-ship-name="Caldari State/Frigate/Kestrel") Kestrel
+                        li
+                          a(href="#" a-ship-name="Caldari State/Frigate/Merlin") Merlin
+                        li
+                          a(href="#" a-ship-name="Caldari State/Frigate/Heron") Heron
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Frigate/Griffin Navy Issue") Griffin Navy Issue
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Frigate/Caldari Navy Hookbill") Caldari Navy Hookbill
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Interceptor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Interceptor/Crow") Crow
+                        li
+                          a(href="#" a-ship-name="Caldari State/Interceptor/Raptor") Raptor
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Assault Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Assault Frigate/Hawk") Hawk
+                        li
+                          a(href="#" a-ship-name="Caldari State/Assault Frigate/Harpy") Harpy
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Covert Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Covert Ops/Buzzard") Buzzard
+                        li
+                          a(href="#" a-ship-name="Caldari State/Covert Ops/Manticore") Manticore
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Electronic Attack Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Electronic Attack Ship/Kistune") Kistune
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistic Frigates
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Logistic Frigates/Kirin") Kirin
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Destroyer Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Destroyer/Cormorant") Cormorant
+                        li
+                          a(href="#" a-ship-name="Caldari State/Destroyer/Corax") Corax
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Interdictor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Interdictor/Flycatcher") Flycatcher
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Destroyers
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Command Destroyers/Stork") Stork
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Tactical Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Tactical Destroyer/Jackdaw") Jackdaw
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Cruiser/Osprey") Osprey
+                        li
+                          a(href="#" a-ship-name="Caldari State/Cruiser/Caracal") Caracal
+                        li
+                          a(href="#" a-ship-name="Caldari State/Cruiser/Moa") Moa
+                        li
+                          a(href="#" a-ship-name="Caldari State/Cruiser/Blackbird") Blackbird
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Cruiser/Osprey Navy Issue") Osprey Navy Issue
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Cruiser/Caracal Navy Issue") Caracal Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Recon Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Recon Ship/Rook") Rook
+                        li
+                          a(href="#" a-ship-name="Caldari State/Recon Ship/Falcon") Falcon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Assault Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Heavy Assault Cruiser/Eagle") Eagle
+                        li
+                          a(href="#" a-ship-name="Caldari State/Heavy Assault Cruiser/Cerberus") Cerberus
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Interdiction Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Heavy Interdiction Cruiser/Onyx") Onyx
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistics Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Logistics Cruiser/Basilisk") Basilisk
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Strategic Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Strategic Cruiser/Tengu") Tengu
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battlecruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battlecruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Battlecruiser/Ferox") Ferox
+                        li
+                          a(href="#" a-ship-name="Caldari State/Battlecruiser/Drage") Drage
+                        li
+                          a(href="#" a-ship-name="Caldari State/Battlecruiser/Naga") Naga
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Battleship/Brutix Navy Issue") Brutix Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Ships
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Command Ships/Nighthawk") Nighthawk
+                        li
+                          a(href="#" a-ship-name="Caldari State/Command Ships/Vulture") Vulture
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Battleship/Scorpian") Scorpian
+                        li
+                          a(href="#" a-ship-name="Caldari State/Battleship/Rokh") Rokh
+                        li
+                          a(href="#" a-ship-name="Caldari State/Battleship/Raven") Raven
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Battleship/Scorpion Navy Issue") Scorpion Navy Issue
+                        li
+                          a(href="#" a-ship-name="Caldari State/Navy Battleship/Raven Navy Issue") Raven Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Black Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Black Ops/Widow") Widow
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Marauder
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Marauder/Golem") Golem
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Dreadnought/Phoenix") Phoenix
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Carrier/Minokawa") Minokawa
+                        li
+                          a(href="#" a-ship-name="Caldari State/Carrier/Wyvern") Wyvern
+                        li
+                          a(href="#" a-ship-name="Caldari State/Carrier/Chimera") Chimera
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Titan/Leviathan") Leviathan
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Industrial Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Industrial
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Industrial/Badger") Badger
+                        li
+                          a(href="#" a-ship-name="Caldari State/Industrial/Tayra") Tayra
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Transport Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Transport Ship/Crane") Crane
+                        li
+                          a(href="#" a-ship-name="Caldari State/Transport Ship/Bustard") Bustard
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Freighter/Charon") Charon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Jump Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Caldari State/Jump Freighter/Rhea") Rhea
+                    // 
+                // 
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Gallante Federation
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Frigate/Navitas") Navitas
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Frigate/Tristan") Tristan
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Frigate/Incursus") Incursus
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Frigate/Imicus") Imicus
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Frigate/Atron") Atron
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Frigate/Maulus") Maulus
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy FrigateNavy Frigate/Federation Navy Comet") Federation Navy Comet
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy Frigate/Maulus Navy Issue") Maulus Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Interceptor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/InterceptorInterceptor/Taranis") Taranis
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Interceptor/Ares") Ares
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Assault Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Assault Frigate/Ishkur") Ishkur
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Assault Frigate/Enyo") Enyo
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Covert Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Covert Ops/Helios") Helios
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Covert Ops/Nemesis") Nemesis
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Electronic Attack Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Electronic Attack Ship/Keres") Keres
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistic Frigates
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Logistic Frigates/Thalia") Thalia
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Destroyer Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Destroyer/Catalyst") Catalyst
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Destroyer/Algos") Algos
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Interdictor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Interdictor/Eris") Eris
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Destroyers
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Command Destroyers/Magus") Magus
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Tactical Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Tactical Destroyer/Hecate") Hecate
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Cruiser/Vexor") Vexor
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Cruiser/Thorax") Thorax
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Cruiser/Celestis") Celestis
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Cruiser/Exequror") Exequror
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy Cruiser/Exequror Navy Issue") Exequror Navy Issue
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy Cruiser/Vexor Navy Issue") Vexor Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Recon Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Recon Ship/Lachesis") Lachesis
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Recon Ship/Arazu") Arazu
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Assault Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Heavy Assault Cruiser/Ishtar") Ishtar
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Heavy Assault Cruiser/Deimos") Deimos
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Interdiction Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Heavy Interdiction Cruiser/Phobos") Phobos
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Strategic Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Strategic Cruiser/Proteus") Proteus
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistics Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Logistics Cruiser/Oneiros") Oneiros
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battlecruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battlecruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Battlecruiser/Prohecy") Prohecy
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Battlecruiser/Harbinger") Harbinger
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Battlecruiser/Oracle") Oracle
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy Battleship/Brutix Navy Issue") Brutix Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Ships
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Command Ships/Astarte") Astarte
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Command Ships/Eos") Eos
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Battleship/Megathron") Megathron
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Battleship/Dominix") Dominix
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Battleship/Hyperion") Hyperion
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy Battleship/Dominix Navy Issue") Dominix Navy Issue
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Navy Battleship/Megathron Navy Issue") Megathron Navy Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Black Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Black Ops/Sin") Sin
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Marauder
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Marauder/Kronos") Kronos
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Dreadnought/Moros") Moros
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Carrier/Ninazu") Ninazu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Carrier/Nyx") Nyx
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Carrier/Thanatos") Thanatos
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Titan/Erebus") Erebus
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Industrial Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Industrial
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Industrial/Nereus") Nereus
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Industrial/Kryos") Kryos
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Industrial/Epithal") Epithal
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Industrial/Miasmos") Miasmos
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Industrial/Iteron Mark V") Iteron Mark V
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Transport Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Transport Ship/Viator") Viator
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Transport Ship/Occator") Occator
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Freighter/Obelisk") Obelisk
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Jump Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Gallante Federation/Jump Freighter/Anshar") Anshar
+                    // 
+                // 
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Minmatar Republic
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Minmatar Republic/Vigil") Vigil
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Minmatar Republic/Slasher") Slasher
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Minmatar Republic/Probe") Probe
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Minmatar Republic/Rifter") Rifter
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Minmatar Republic/Breacher") Breacher
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Minmatar Republic/Burst") Burst
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Frigate/Republic Fleet Firetail") Republic Fleet Firetail
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Frigate/Vigil Fleet Issue") Vigil Fleet Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Interceptor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Interceptor/Claw") Claw
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Interceptor/Stiletto") Stiletto
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Assault Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Assault Frigate/Jaguar") Jaguar
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Assault Frigate/Wolf") Wolf
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Covert Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Covert Ops/Cheetah") Cheetah
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Covert Ops/Hound") Hound
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Electronic Attack Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Electronic Attack Ship/Hyena") Hyena
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistic Frigates
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Logistic Frigates/Scalpel") Scalpel
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Destroyer Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Destroyer/Talwar") Talwar
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Destroyer/Thrasher") Thrasher
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Interdictor
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Interdictor/Sabre") Sabre
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Destroyers
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Command Destroyers/Bifrost") Bifrost
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Tactical Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Tactical Destroyer/Svipul") Svipul
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Cruiser/Stabber") Stabber
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Cruiser/Ruptur") Ruptur
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Cruiser/Bellicose") Bellicose
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Cruiser/Scythe") Scythe
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Cruiser/Scythe Fleet Issue") Scythe Fleet Issue
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Cruiser/Stabber Fleet Issue") Stabber Fleet Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Recon Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Recon Ship/Crucifier") Huggin
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Recon Ship/Crucifier") Rapier
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Assault Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Heavy Assault Cruiser/Muninn") Muninn
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Heavy Assault Cruiser/Vagabond") Vagabond
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Logistics Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Logistics Cruiser/Broadsword") Broadsword
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Heavy Interdiction Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Heavy Interdiction Cruiser/Scimitar") Scimitar
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Strategic Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Strategic Cruiser/Loki") Loki
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battlecruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battlecruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Battlecruiser/Cyclone") Cyclone
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Battlecruiser/Hurricane") Hurricane
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Battlecruiser/Tornado") Tornado
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Battleship/Hurricane Fleet Issue") Hurricane Fleet Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Command Ships
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Command Ships/Claymore") Claymore
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Command Ships/Sleipnir") Sleipnir
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Battleship/Typhoon") Typhoon
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Battleship/Maelstrom") Maelstrom
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Battleship/Tempest") Tempest
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Navy Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Battleship/Typhoon Fleet Issue") Typhoon Fleet Issue
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Navy Battleship/Tempest Fleet Issue") Tempest Fleet Issue
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Black Ops
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Black Ops/Panther") Panther
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Marauder
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Marauder/Vargur") Vargur
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Dreadnought/Naglfar") Naglfar
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Carrier/Lif") Lif
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Carrier/Hel") Hel
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Carrier/Nighoggur") Nighoggur
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Titan/Ragnarok") Ragnarok
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Industrial Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Industrial
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Industrial/Hoarder") Hoarder
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Industrial/Mammoth") Mammoth
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Industrial/Wreathe") Wreathe
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Transport Ship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Transport Ship/Prowlerr") Prowler
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Transport Ship/Mastodon") Mastodon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Freighter/Fenrir") Fenrir
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Jump Freighter
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Minmatar Republic/Jump Freighter/Nomad") Nomad
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Ore
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Mining Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Ore/Mining Frigate/Venture") Venture
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Expedition Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Ore/Expedition Frigate/Prospect") Prospect
+                        li
+                          a(href="#" a-ship-name="Ore/Expedition Frigate/Endurance") Endurance
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Mining Barge
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="#" a-ship-name="Ore/Mining Barge/Procurer") Procurer
+                    li
+                      a(href="#" a-ship-name="Ore/Mining Barge/Covetor") Covetor
+                    li
+                      a(href="#" a-ship-name="Ore/Mining Barge/Retriever") Retriever
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Exhumer
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="#" a-ship-name="Ore/Exhumer/Hulk") Hulk
+                    li
+                      a(href="#" a-ship-name="Ore/Exhumer/Skiff") Skiff
+                    li
+                      a(href="#" a-ship-name="Ore/Exhumer/Machkinaw") Machkinaw
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Ore Industrial Ship
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="#" a-ship-name="Ore/Ore Industrial Ship/Noctis") Noctis
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Industrial Command Ship
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="#" a-ship-name="Ore/Industrial Command Ship/Porpoise") Porpoise
+                    li
+                      a(href="#" a-ship-name="Ore/Industrial Command Ship/Orca") Orca
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Industrial Ship
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="#" a-ship-name="Ore/Capital Industrial Ship/Rorqual") Rorqual
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Freighter
+                    span.caret
+                  ul.dropdown-menu
+                    li
+                      a(href="#" a-ship-name="Ore/Freighter/Bowhead") Bowhead
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Guristas Pirates
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Guristas Pirates/Frigate Class/Worm") Worm
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Guristas Pirates/Cruiser Class/Gila") Gila
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battlecruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label
+                          | Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Guristas Pirates/Battlecruiser Class/Rattlesnake") Rattlesnake
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Guristas Pirates/Dreadnought/Caiman") Caiman
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Guristas Pirates/Carrier/Loggerhead") Loggerhead
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Guristas Pirates/Titan/Komodo") Komodo
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Sansha&apos;s Nation
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Sansha's Nation/Frigate/Succubus") Succubus
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Sansha's Nation/Cruiser/Phantasm") Phantasm
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Sansha's Nation/Battleship/Nightmare") Nightmare
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Sansha's Nation/Carrier/Revenant") Revenant
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Blood Raider Covenant
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Blood Raider Covenant/Frigate/Cruor") Cruor
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Blood Raider Covenant/Cruiser Class/Ashimmu") Ashimmu
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Blood Raider Covenant/Battleship/Bhaalgorn") Bhaalgorn
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Blood Raider Covenant/Dreadnought/Chemosh") Chemosh
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Blood Raider Covenant/Carrier/Dagon") Dagon
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Blood Raider Covenant/Titan/Molok") Molok
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Angel Cartel
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Angel Cartel/Frigate/Dramiel") Dramiel
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Angel Cartel/Cruiser/Cynabal") Cynabal
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Angel Cartel/Battleship/Machariel") Machariel
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Serpentis
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Serpentis/Frigate/DareDevil") DareDevil
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Serpentis/Cruiser/Vigilant") Vigilant
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Serpentis/Battleship/Vindicator") Vindicator
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Serpentis/Dreadnought/Vehement") Vehement
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Carrier
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Serpentis/Carrier/Vendetta") Vendetta
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Titan
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Serpentis/Titan/Vanquisher") Vanquisher
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Servant Sisters of Eve
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Servant Sisters of Eve/frigate/Astero") Astero
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Servant Sisters of Eve/Cruiser/Stratios") Stratios
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Servant Sisters of Eve/Battleship/Nestor") Nestor
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Mordu&apos;s Legion Command
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Mordu's Legion Command/Frigate/Garmur") Garmur
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Mordu's Legion Command/Cruiser/Orthrus") Orthrus
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Mordu's Legion Command/Battleship/Barghest") Barghest
+                    // 
+                // 
+            // paste after here
+            li.dropdown
+              a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true")
+                span.nav-label
+                  | Triglavian Collective
+                span.caret
+              ul.dropdown-menu
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Frigate Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Frigate/Damavik") Damavik
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Assault Frigate
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Assault Frigate/Nergal") Nergal
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Destroyer Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Destroyer/Kikimora") Kikimora
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Command Destroyer
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Command Destroyer/Draugur") Draugur
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Cruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Cruiser/Vedmak") Vedmak
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Cruiser/Rodiva") Rodiva
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Heavy Assault Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Heavy Assault Cruiser/Ikitursa") Ikitursa
+                    // 
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Logistics Cruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Logistics Cruiser/Zarmazd") Zarmazd
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battlecruiser Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battlecruiser
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Battlecruiser/Drekavac") Drekavac
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Battleship Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Battleship
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Battleship/Leshak") Leshak
+                    // 
+                // 
+                li.dropdown-submenu
+                  a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                    span.nav-label Capital Class
+                    span.caret
+                  ul.dropdown-menu
+                    li.dropdown-submenu
+                      a.dropdown-toggle(data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+                        span.nav-label Dreadnought
+                        span.caret
+                      ul.dropdown-menu
+                        li
+                          a(href="#" a-ship-name="Triglavian Collective/Dreadnought/Zirnitra") Zirnitra
+                span.glyphicon.glyphicon-remove(aria-hidden="true")
+      ul.nav.navbar-nav.navbar-right
+        p.navbar-text
+          body(onload="updateClock(); setInterval('updateClock()', 1000 )")
+            a#clock(style="color:white") &nbsp;
+        a(href="#") Login
+        li.disabled
+          a(href="#") Register
+        | &apos;);
+        | &#x9;&#x9;&#x9;&#x9;&#x9;}
+        | &#x9;&#x9;&#x9;&#x9;&#x9;else {
+        | &#x9;&#x9;&#x9;&#x9;&#x9; echo(&apos;
+        li.disabled
+          a(href="#") Logout
+        li.disabled
+          a(href="#") My Account
+        | &apos;);
+        | &#x9;&#x9;&#x9;&#x9;&#x9;}
+        | &#x9;&#x9;&#x9;&#x9;&#x9;?&gt;

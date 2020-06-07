@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const app = express();
 const session = require('express-session');
-const TWO_HOURS = 1000 * 60 * 5
+const TWO_HOURS = 1000 * 60 * 5;
+
 
 const {
-  PORT = 3000,
+  PORT = 5000,
   NODE_ENV = 'development',
   SESS_SECRET = 'qwertzxcbasdfgyuiopnmhjkl',
 
@@ -27,7 +29,7 @@ app.use(session({
     sameSite: true,
     secure: IN_PROD
   }
-}))
+}));
 
 app.set('view engine', 'pug')
 app.use(express.static('public'));
@@ -49,4 +51,4 @@ app.use(function(req, res) {
 
 //shit breaking section
 
-app.listen(PORT, ()=> console.log(`server is running on ${PORT}`))
+app.listen(PORT, ()=> console.log(`server is running on ${PORT}`));

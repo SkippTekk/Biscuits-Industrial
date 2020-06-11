@@ -2,11 +2,11 @@ const mysql = require('mysql');
 require('dotenv').config();
 const pool = mysql.createPool({
     connectionLimit: 100,
-    password: `'${process.env.MYSQL_PASS}'`,
-    user: `'${process.env.MYSQL_USER}'`,
-    database: `'${process.env.MYSQL_DB}'`,
-    host: `'${process.env.MYSQL_HOST}'`,
-    charset: "utf8mb4_bin"
+    password: `${process.env.MYSQL_PASS}`,
+    user: `${process.env.MYSQL_USER}`,
+    database: `${process.env.MYSQL_DB}`,
+    host: `${process.env.MYSQL_HOST}`,
+    charset: 'utf8mb4_bin'
 });
 
 

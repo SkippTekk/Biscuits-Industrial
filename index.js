@@ -9,14 +9,13 @@ const TWO_HOURS = 1000 * 60 * 5;
 const {
   PORT = 5000,
   NODE_ENV = 'development',
-  SESS_SECRET = 'qwertzxcbasdfgyuiopnmhjkl',
+  SESS_SECRET = `'${process.env.SECRET_KEY}'`,
 
   SESS_NAME = 'sid',
   SESS_LIFETIME = TWO_HOURS
 } = process.env
 
 const IN_PROD = NODE_ENV ==='production'
-
 
 
 app.use(session({
@@ -36,7 +35,12 @@ app.use(express.static('public'));
 
 //showing files to the public
 app.get('/', function (req, res) {
-  res.render(__dirname + '/public/index')
+  res.render(__dirname + '/public/index', {
+    getUsername: function() {
+      return req.user
+    }
+  });
+
 });
 app.get('/ships', function (req, res) {
   res.render(__dirname + '/public/ships')

@@ -2237,17 +2237,14 @@ nav.navbar.navbar-inverse.navbar-expand-lg.navbar-slide-nav
         p.navbar-text
           body(onload="updateClock(); setInterval('updateClock()', 1000 )")
             a#clock(style="color:white") &nbsp;
-        a(href="#") Login
-        li.disabled
-          a(href="#") Register
-        | &apos;);
-        | &#x9;&#x9;&#x9;&#x9;&#x9;}
-        | &#x9;&#x9;&#x9;&#x9;&#x9;else {
-        | &#x9;&#x9;&#x9;&#x9;&#x9; echo(&apos;
-        li.disabled
-          a(href="#") Logout
-        li.disabled
-          a(href="#") My Account
-        | &apos;);
-        | &#x9;&#x9;&#x9;&#x9;&#x9;}
-        | &#x9;&#x9;&#x9;&#x9;&#x9;?&gt;
+        ul.nav.navbar-nav
+          if user != null
+            li.disabled
+              a(href="#") Login
+            li.disabled
+              a(href="#") Register
+          else
+            li.disabled
+              a(href="#") Logout
+            li.disabled
+              a(href="#") My Account

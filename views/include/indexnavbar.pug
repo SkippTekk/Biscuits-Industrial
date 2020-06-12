@@ -22,7 +22,7 @@ nav.navbar.navbar-inverse.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href="#") Home Page
+      a.navbar-brand(href="./") Home Page
     // Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
@@ -56,14 +56,14 @@ nav.navbar.navbar-inverse.navbar-default
             a#clock(style="color:white") &nbsp;
         ul.nav.navbar-nav
           if user != null
-            li.disabled
-              a(href="#") Login
-            li.disabled
-              a(href="#") Register
+            li
+              a(href="./login") Login
+            li
+              a(href="./register") Register
           else
-            li.disabled
+            li
               a(href="#") Logout
-            li.disabled
+            li
               a(href="#") My Account
 .navbar-collapse
 .container-fluid

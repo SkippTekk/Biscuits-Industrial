@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Registration
+    link(href="./css/bootstrap.css" rel="stylesheet")
+  body
+    .jumbotron.text-center(style="margin-bottom:30px")
+      h1 Biscuits Industrial
+      h3  Eve Online, Spreadsheets in space 
+include ./include/indexnavbar.pug
+include ./contents/announcements.pug
+section.container-fluid
+    .row
+        .col-md-3.leftNav
+            | Hi there, Thanks for taking the interest on the website, It's in current progress and will be advanced in due time.
+            .discord-widget
+        .col-md-6.content
+            div(class="card")
+                div(class="card-header")
+                    | Register your account to Biscuits Industrial
+                    div(class="card-body")
+                        form(action="/auth/register" method="POST")
+                            div(class="form-group")
+                                label(for="username")
+                                input(type="text" class="form-control" id="username" placeholder="Username goes here" name="username")
+                                small(id="nameHelp" class="form-text text-muted") I won't EVER share your email. Only for legal purpose. Aka Government or FBI busting down my door.
+                            div(class="form-group")
+                                label(for="email")
+                                input(type="email" class="form-control" id="email" placeholder="Email goes here." name="email")
+                                small(id="emailHelp" class="form-text text-muted") This is where you place your email to login.
+                            div(class="form-group")
+                                label(for="password")
+                                input(type="password" class="form-control" id="password" placeholder="Password goes here." name="password")
+                                small(id="emailHelp" class="form-text text-muted") Gimme your password. I highly recommend using LastPass to generate it. Harder for people to "hack" into
+                            div(class="form-group")
+                                label(for="passwordVerify")
+                                input(type="password" class="form-control" id="passwordVerify" placeholder="Confirm your password here" name="passwordVerify")
+                                small(id="emailHelp" class="form-text text-muted") Confirm your password your using.
+                            button(type="submit" class="btn btn-primary") Register with this button
+                    
+                            
+        .col-md-3.reletedContent
+            | right shit goes here
+    // Footsie for the footer
+    script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous")
+include ./include/footer.pug

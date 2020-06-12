@@ -10,11 +10,16 @@
   "author": "SkippTekk#6969",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
+    "cookie-parser": "^1.4.5",
+    "cookies": "^0.8.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
     "pug": "^3.0.0"

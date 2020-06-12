@@ -2,12 +2,19 @@ const mysql = require('mysql');
 require('dotenv').config();
 const pool = mysql.createPool({
     connectionLimit: 100,
-    password: `${process.env.MYSQL_PASS}`,
-    user: `${process.env.MYSQL_USER}`,
-    database: `${process.env.MYSQL_DB}`,
-    host: `${process.env.MYSQL_HOST}`,
+    password: process.env.MYSQL_PASS,
+    user: process.env.MYSQL_USER,
+    database: process.env.MYSQL_DB,
+    host: process.env.MYSQL_HOST,
     charset: 'utf8mb4_bin'
 });
+pool.getConnection( (err) =>{
+    if(err) {
+      console.log(err)}
+      else {
+        console.log(`Database connected to database ${process.env.MYSQL_DB}`)
+      }
+  })
 
 
 let invtypes = {};

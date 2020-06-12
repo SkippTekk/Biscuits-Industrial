@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Login :D
+    link(href="./css/bootstrap.css" rel="stylesheet")
+    script(src="./js/jquery-3.4.1.min.js")
+  body
+    .jumbotron.text-center(style="margin-bottom:30px")
+      h1 Biscuits Industrial
+      h3  Eve Online, Spreadsheets in space 
+include ./include/indexnavbar.pug
+include ./contents/announcements.pug
+section.container-fluid
+    .row
+        .col-md-3.leftNav
+            | left side shit goes here
+            .discord-widget
+        .col-md-6.content
+            | middle shit goes here
+        .col-md-3.reletedContent
+            | right shit goes here
+    // Footsie for the footer
+include ./include/footer.pug
+include ./include/scripts.pug

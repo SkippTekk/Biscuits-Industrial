@@ -3,13 +3,41 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const session = require('express-session');
+const Cookies = require('cookies');
+const cookieParser = require('cookie-parser');
 const TWO_HOURS = 1000 * 60 * 5;
+
+const mysql = require('mysql');
+const db = mysql.createPool({
+  password: process.env.MYSQL_PASSU,
+  user: process.env.MYSQL_USERU,
+  database: process.env.MYSQL_DBU,
+  host: process.env.MYSQL_HOST,
+  charset: 'utf8mb4_bin'
+});
+db.getConnection( (err) =>{
+  if(err) {
+    console.log(err)}
+    else {
+      console.log(`Database connected to database ${process.env.MYSQL_DBU}`)
+    }
+});
+app.set('view engine', 'pug')
+app.use(express.static('public'));
+
+//login shit goes here
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+app.use(cookieParser());
+
+app.use('/', require('./routes/pages'));
+
 
 
 const {
   PORT = 5000,
   NODE_ENV = 'development',
-  SESS_SECRET = `'${process.env.SECRET_KEY}'`,
+  SESS_SECRET = `${process.env.SECRET_KEY}`,
 
   SESS_NAME = 'sid',
   SESS_LIFETIME = TWO_HOURS
@@ -30,29 +58,6 @@ app.use(session({
   }
 }));
 
-app.set('view engine', 'pug')
-app.use(express.static('public'));
 
-//showing files to the public
-app.get('/', function (req, res) {
-  res.render(__dirname + '/public/index', {
-    getUsername: function() {
-      return req.user
-    }
-  });
-
-});
-app.get('/ships', function (req, res) {
-  res.render(__dirname + '/public/ships')
-});
-
-//api shit 
-const apiRouter = require('./server/routes')
-app.use('/api/InvTypes', apiRouter)
-app.use(function(req, res) {
-    res.sendFile(__dirname + '/api.html');
-});
-
-//shit breaking section
 
 app.listen(PORT, ()=> console.log(`server is running on ${PORT}`));

@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Registration
+    link(href="./css/bootstrap.css" rel="stylesheet")
+    script(src="./js/jquery-3.4.1.min.js")
+  body
+    .jumbotron.text-center(style="margin-bottom:30px")
+      h1 Biscuits Industrial
+      h3  Eve Online, Spreadsheets in space 
+include ./include/indexnavbar.pug
+include ./contents/announcements.pug
+section.container-fluid
+    .row
+        .col-md-3.leftNav
+            | Hi there, Thanks for taking the interest on the website, It's in current progress and will be advanced in due time.
+            .discord-widget
+        .col-md-6.content
+            div(class="card")
+                div(class="card-header")
+                    | Login to Biscuits Industrial
+                    div(class="card-body")
+                        form(action="/register" method="POST")
+                            div(class="form-group")
+                                label(for="username")
+                                input(type="text" class="form-control" id="username" placeholder="Username goes here" name="username")
+                                small(id="nameHelp" class="form-text text-muted") I won't EVER share your email. Only for legal purpose. Aka Government or FBI busting down my door.
+                            div(class="form-group")
+                                label(for="email")
+                                input(type="email" class="form-control" id="email" placeholder="Email goes here." name="email")
+                                small(id="emailHelp" class="form-text text-muted") This is where you place your email to login.
+                            div(class="form-group")
+                                label(for="emailVerify")
+                                input(type="email" class="form-control" id="emailVerify" placeholder="Type the email again for verification." name="emailVerify")
+                                small(id="emailHelp" class="form-text text-muted") And email again to verify you typed it in right.
+                            div(class="form-group")
+                                label(for="password")
+                                input(type="password" class="form-control" id="password" placeholder="Password goes here." name="password")
+                                small(id="emailHelp" class="form-text text-muted") Gimme your password. I highly recommend using LastPass to generate it. Harder for people to "hack" into
+                            div(class="form-group")
+                                label(for="passwordVerify")
+                                input(type="password" class="form-control" id="passwordVerify" placeholder="Verify zeh password" name="passwordVerify")
+                                small(id="emailHelp" class="form-text text-muted") Gimme your password again, this is to make sure you typed it in right.
+                            div(class="form-group form-check")
+                                input(type="checkbox" class="form-check-input" id="checkboxAgreement")
+                                small(id="nameHelp" class="form-text text-muted") You agree to trust me with the above.
+                            button(type="submit" class="btn btn-primary") Register with this button
+                            
+        .col-md-3.reletedContent
+            | right shit goes here
+    // Footsie for the footer
+include ./include/footer.pug
+include ./include/scripts.pug

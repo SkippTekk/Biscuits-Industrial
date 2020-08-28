@@ -12,7 +12,7 @@ pool.getConnection( (err) =>{
     if(err) {
       console.log(err)}
       else {
-        console.log(`Database connected to database ${process.env.MYSQL_DB}`)
+        console.log(`Database connected to database ${process.env.MYSQL_DB} DB index`)
       }
   })
 

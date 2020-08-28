@@ -55,7 +55,7 @@ nav.navbar.navbar-inverse.navbar-default
           body(onload="updateClock(); setInterval('updateClock()', 1000 )")
             a#clock(style="color:white") &nbsp;
         ul.nav.navbar-nav
-          if user != null
+          if user != 0
             li
               a(href="./login") Login
             li

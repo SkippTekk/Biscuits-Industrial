@@ -9,9 +9,9 @@ const TWO_HOURS = 1000 * 60 * 5;
 
 const mysql = require('mysql');
 const db = mysql.createPool({
-  password: process.env.MYSQL_PASSU,
-  user: process.env.MYSQL_USERU,
-  database: process.env.MYSQL_DBU,
+  password: process.env.MYSQL_PASS,
+  user: process.env.MYSQL_USER,
+  database: process.env.MYSQL_DB,
   host: process.env.MYSQL_HOST,
   charset: 'utf8mb4_bin'
 });
@@ -19,7 +19,7 @@ db.getConnection( (err) =>{
   if(err) {
     console.log(err)}
     else {
-      console.log(`Database connected to database ${process.env.MYSQL_DBU}`)
+      console.log(`Database connected to database ${process.env.MYSQL_DB} /index`)
     }
 });
 app.set('view engine', 'pug')
